@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% block content %}
+  <h2>List of Books</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Description</th>
+        <th>Author</th>
+        <th>Categories</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.book_name }}</td>
+          <td>{{ book.book_description }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.categories.all|join:", " }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock content %}
+</body>
+</html>

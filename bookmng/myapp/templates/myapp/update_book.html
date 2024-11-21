@@ -1,0 +1,17 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update_book</title>
+</head>
+<body>
+    {% comment %} <h1>Update_book: {{ list_books.name }}</h1> {% endcomment %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Update</button>
+    </form>
+    {% comment %} <a href="{% url 'update_book' id.id %}">Cancel</a> {% endcomment %}
+</body>
+</html>

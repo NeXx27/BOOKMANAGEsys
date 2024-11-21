@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% block content %}
+  <h2>Author list</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Author Name</th>
+        {% comment %} <th>Description</th>
+        <th>Author</th>
+        <th>Categories</th> {% endcomment %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in author %}
+        <tr>
+          <td>{{ a.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock content %}
+</body>
+</html>
